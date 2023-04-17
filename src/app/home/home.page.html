@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sample App with ion-datetime component.</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()" #dateForm="ngForm">
+    <ion-item>
+      <ion-label>Select a date from future</ion-label>
+      <ion-datetime placeholder="Select Date" [min]="minDateIon"
+        [max]="year" presentation = "date" [(ngModel)]="selectedDate" name="selectedDate" (ionChange)="onDateSelect($event)"></ion-datetime>
+    </ion-item>
+    <ion-button expand="full" type="submit">Submit</ion-button>
+  </form>
+
+  <div class="output" *ngIf="submitted">
+    <h2>Selected date: {{selectedDate}}</h2>
+    <ul>
+      <li><strong>Today:</strong> {{today}}</li>
+      <li><strong>Yesterday:</strong> {{yesterday}}</li>
+      <li><strong>10 days past selected date:</strong> {{tenDaysAgo}}</li>
+      <li><strong>1 year past selected date:</strong> {{oneYearAgo}}</li>
+    </ul>
+  </div>
+
+</ion-content>

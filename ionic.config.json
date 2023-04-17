@@ -1,0 +1,8 @@
+{
+  "name": "date-selector-app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
